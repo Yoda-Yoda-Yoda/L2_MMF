@@ -120,7 +120,7 @@ while tickets_sold < MAX_TICKETS:
         print("Sorry you are too young for this movie")
         continue
     elif age > 120:
-        print("?? That looks like a typo (too old")
+        print("?? That looks like a typo (too old)")
         continue
     else:
         pass

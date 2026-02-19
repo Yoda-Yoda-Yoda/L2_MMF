@@ -1,4 +1,5 @@
 import pandas
+import random
 # Functions go here
 def make_statement(statement, decoration):
     """Creates heading (3 lines), surrounding (2 lines) and
@@ -198,6 +199,24 @@ print(mini_movie_frame.to_string(index=False))
 print()
 print(f"Total Paid: ${total_paid:.2f}")
 print(f"Total Profit: ${total_profit:.2f}")
+
+# choose random winner...
+winner = random.choice(all_names)
+
+# find index of winer (ie: position in list)
+winner_index = all_names.index(winner)
+print("Winner", winner, "list position", winner_index)
+
+# retrieve ticket price and surcharge
+winner_ticket_price = all_ticket_costs[winner_index]
+winer_surcharge = all_surcharges[winner_index]
+
+# find total won
+total_won = mini_movie_frame.at[winner_index, 'Total']
+
+
+# winer announcement
+print(f"The lucky winner is {winner}. Their ticket worth {total_won} is free!")
 
 if tickets_sold == MAX_TICKETS:
     print(f"You have sold all the tickets (ie: {MAX_TICKETS} tickets")
